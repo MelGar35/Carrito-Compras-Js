@@ -28,9 +28,25 @@ productos.forEach ((producto)=> {
     <img src="${producto.imgSrc}" class="cardImg">
     <p class="cardDesc">${producto.descripcion}</p>
     <span class="cardPrice">$${producto.precio}</span>
-    <button class="butonCTA">Agregar al carrito</button>`
+    <button class="butonCTA" data-id=${producto.id}>Agregar al carrito</button>`
     nuevoDiv.className = "card"
     console.log(nuevoDiv)
     cardContainerQuery.append(nuevoDiv)
 })
+
+
+const botonesCarrito = document.querySelectorAll(".butonCTA")
+
+
+const agregarProducto = (e) => {
+    e.target.innerHTML= "Agregaste este producto"
+    console.log(e.target);
+}
+
+botonesCarrito.forEach((boton) => {
+    boton.addEventListener("click", agregarProducto)
+})
+
+
+
 
