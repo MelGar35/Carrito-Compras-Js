@@ -1,5 +1,5 @@
 
-//ejemplo practico.
+//ejemplo práctico.
 
 class Producto {
     constructor(id, producto, imgSrc, descripcion, precio) {
@@ -34,8 +34,9 @@ productos.forEach ((producto)=> {
     cardContainerQuery.append(nuevoDiv)
 })
 
+//Evento click sobre botón de compra. Botón Agregar al carrito. 
 
-const botonesCarrito = document.querySelectorAll(".butonCTA")
+const botonesCarrito = document.querySelectorAll(".butonCTA") 
 
 
 const agregarProducto = (e) => {
@@ -46,6 +47,17 @@ const agregarProducto = (e) => {
 botonesCarrito.forEach((boton) => {
     boton.addEventListener("click", agregarProducto)
 })
+
+//Botón comprar.
+
+const botonComprar = document.querySelector("#botonComprar")
+
+const mostrarMsj = () =>{
+    alert("La compra se realizó exitosamente")
+}
+
+botonComprar.addEventListener("click", mostrarMsj)
+
 
 
 
